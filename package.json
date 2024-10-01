@@ -4,7 +4,7 @@
   "main": "src/index.js",
   "types": "src/index.d.ts",
   "files": [
-    "src/*.js",
+    "src/**/*.js",
     "src/*.d.ts",
     "dist/"
   ],
