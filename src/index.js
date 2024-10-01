@@ -1,0 +1,28 @@
+const plugin = require('tailwindcss/plugin')
+
+const paddingUtilities = require('./utilities/paddingUtilities')
+const marginUtilities = require('./utilities/marginUtilities')
+const floatUtilities = require('./utilities/floatUtilities')
+const insetUtilities = require('./utilities/insetUtilities')
+const clearUtilities = require('./utilities/clearUtilities')
+const borderRadiusUtilities = require('./utilities/borderRadiusUtilities')
+const borderWidthUtilities = require('./utilities/borderWidthUtilities')
+const textAlignUtilities = require('./utilities/textAlignUtilities')
+const transformOriginUtilities = require('./utilities/transformOriginUtilities')
+const spaceUtilities = require('./utilities/spaceUtilities')
+const divideUtilities = require('./utilities/divideUtilities')
+
+module.exports = plugin((helpers) => {
+  const { addUtilities, variants } = helpers
+  paddingUtilities(helpers)
+  marginUtilities(helpers)
+  insetUtilities(helpers)
+  borderRadiusUtilities(helpers)
+  addUtilities(clearUtilities(helpers), variants('clear'))
+  addUtilities(floatUtilities(helpers), variants('float'))
+  borderWidthUtilities(helpers)
+  addUtilities(textAlignUtilities(helpers), variants('textAlign'))
+  addUtilities(transformOriginUtilities(), variants('transformOrigin'))
+  spaceUtilities(helpers)
+  divideUtilities(helpers)
+})
